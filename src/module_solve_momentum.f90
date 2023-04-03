@@ -1706,7 +1706,7 @@ module mpi_momentum
                 
                     !4-2A:       ! M33Wn (NoBC)
                     RHS_ijk  = RHS_ijk - ( + M33MI * dble(iwm) * Wim + M33MJ * dble(jwm) * Wjm + M33MK * dble(kwm) * Wkm  &
-                                           +(M33CI                   + M33CJ                      + M33CK              ) * Wijk &
+                                           +(M33CI                   + M33CJ                   + M33CK           ) * Wijk &
                                            + M33PI * dble(iwp) * Wip + M33PJ * dble(jwp) * Wjp + M33PK * dble(kwp) * Wkp  ) 
                     !4-2B:       ! M31Un (NoBC)
                     M31Un = + 0.25d0* ( + u1*dble(iwm) *dwdx1 + u2*dble(iwp) *dwdx2 ) - invRhocCmu_half *( mu2*dudz2*dble(iwp) - mu1*dudz1*dble(iwm) ) / dx1(i)

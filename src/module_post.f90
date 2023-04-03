@@ -1481,9 +1481,9 @@ module mpi_Post
 
         dx2  => dx2_sub
 
-        dUdy_loc=0.d0; dUdy_I=0.d0; dUdy_K=0.d0
-        dTdy_loc=0.d0; dTdy_I=0.d0; dTdy_K=0.d0
-        wss=0.d0     ; Tss=0.d0
+        dUdy_loc=0.0d0; dUdy_I=0.0d0; dUdy_K=0.0d0
+        dTdy_loc=0.0d0; dTdy_I=0.0d0; dTdy_K=0.0d0
+        wss=0.0d0     ; Tss=0.0d0
 
         if(comm_1d_x2%myrank==0) then
             do k=1,n3sub

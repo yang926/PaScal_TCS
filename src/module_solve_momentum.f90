@@ -783,10 +783,10 @@ module mpi_momentum
             ! For Single Precision
             temp = BB / AIJAIJ
 
-            if(temp.lt.1e-12) then
-                temp = 0.d0
-            endif
-            
+            if(ABS(AIJAIJ).lt.real(1e-7)) then ! If AijAij equals zero, then turbulent viscosity will goes 0 (it is defined in Vreman model, please check Vreman, PoF 2004.)
+                temp = real(0.0)
+           endif
+           
             Mu(i,j,k)     = ( Cv * SQRT ( temp ) ) / Cmu + 1.d0
 
         enddo

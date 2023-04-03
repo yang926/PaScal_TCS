@@ -767,12 +767,12 @@ module mpi_momentum
             !BB23 = DV2DX1*DV3DX1*(dx1(i)*dx1(i)) + DV2DX2*DV3DX2*(dx2(j)*dx2(j)) + DV2DX3*DV3DX3*(dx3(k)*dx3(k))
             
             ! +) considering damping 
-            BB11 = DV1DX1*DV1DX1*(damping*dx1(i)) + DV1DX2*DV1DX2*(damping*dx2(j)) + DV1DX3*DV1DX3*(damping*dx3(k))
-            BB22 = DV2DX1*DV2DX1*(damping*dx1(i)) + DV2DX2*DV2DX2*(damping*dx2(j)) + DV2DX3*DV2DX3*(damping*dx3(k))
-            BB33 = DV3DX1*DV3DX1*(damping*dx1(i)) + DV3DX2*DV3DX2*(damping*dx2(j)) + DV3DX3*DV3DX3*(damping*dx3(k))
-            BB12 = DV1DX1*DV2DX1*(damping*dx1(i)) + DV1DX2*DV2DX2*(damping*dx2(j)) + DV1DX3*DV2DX3*(damping*dx3(k))
-            BB13 = DV1DX1*DV3DX1*(damping*dx1(i)) + DV1DX2*DV3DX2*(damping*dx2(j)) + DV1DX3*DV3DX3*(damping*dx3(k))
-            BB23 = DV2DX1*DV3DX1*(damping*dx1(i)) + DV2DX2*DV3DX2*(damping*dx2(j)) + DV2DX3*DV3DX3*(damping*dx3(k))
+            BB11 = DV1DX1*DV1DX1*(damping*dx1(i))**2.0d0 + DV1DX2*DV1DX2*(damping*dx2(j))**2.0d0 + DV1DX3*DV1DX3*(damping*dx3(k))**2.0d0
+            BB22 = DV2DX1*DV2DX1*(damping*dx1(i))**2.0d0 + DV2DX2*DV2DX2*(damping*dx2(j))**2.0d0 + DV2DX3*DV2DX3*(damping*dx3(k))**2.0d0
+            BB33 = DV3DX1*DV3DX1*(damping*dx1(i))**2.0d0 + DV3DX2*DV3DX2*(damping*dx2(j))**2.0d0 + DV3DX3*DV3DX3*(damping*dx3(k))**2.0d0
+            BB12 = DV1DX1*DV2DX1*(damping*dx1(i))**2.0d0 + DV1DX2*DV2DX2*(damping*dx2(j))**2.0d0 + DV1DX3*DV2DX3*(damping*dx3(k))**2.0d0
+            BB13 = DV1DX1*DV3DX1*(damping*dx1(i))**2.0d0 + DV1DX2*DV3DX2*(damping*dx2(j))**2.0d0 + DV1DX3*DV3DX3*(damping*dx3(k))**2.0d0
+            BB23 = DV2DX1*DV3DX1*(damping*dx1(i))**2.0d0 + DV2DX2*DV3DX2*(damping*dx2(j))**2.0d0 + DV2DX3*DV3DX3*(damping*dx3(k))**2.0d0
 
             BB = BB11*BB22 - BB12*BB12 + BB11*BB33 - BB13*BB13 + BB22*BB33 - BB23*BB23
         
